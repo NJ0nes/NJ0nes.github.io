@@ -1,0 +1,87 @@
+@import "colorscheme.scss";
+@import "navbar.scss";
+
+* {
+    background: $bgcolor_even;
+    color: $text_color;
+}
+
+div.large-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.6em;
+
+    h1 {
+        text-align: center;
+    }
+
+    div.bigimage {
+        padding: 32px;
+        display: flex;
+        justify-content: center;
+        img {
+            max-width: 90vw;
+            max-height: 600px;
+        }
+    }
+
+    div.maintext {
+        padding: 32px;
+        display: flex;
+        justify-content: center;
+
+        div.container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+}
+
+div.vertcenter {
+    display: flex;
+    justify-content: center;
+}
+
+div.sidebyside {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    img {
+        max-width: 90vw;
+        max-height: 400px;
+    }
+}
+
+figure {
+    display: table;
+}
+
+figcaption {
+    font-size: smaller;
+    display: table-caption;
+    caption-side: bottom;
+}
+
+@media screen and (min-width: 1100px) {
+    div.sidebyside {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+
+        img {
+            max-width: 50vw;
+            max-height: 400px;
+        }
+    }
+
+    div.container {
+        width: 70%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}

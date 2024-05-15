@@ -1,0 +1,27 @@
+---
+layout: mainpage
+title: My Portfolio
+---
+
+<!-- TODO: Link to detail pages and change font to sans -->
+
+<div class="large-container">
+<div class="itemlist">
+    {% for project in site.data.portfolio_items %}
+
+    {% assign is_odd = forloop.index0 | modulo: 2 %}
+    <div class="itembody isodd{{ is_odd }}">
+        <div class="preview">
+            <img src="/assets/images/{{ project.image }}"/>
+        </div>
+        <div class="description">
+            <div>
+                <h1>{{ project.title }}</h1>
+                <p>{{ project.description }}<br/> <a href="{{ project.detailpage }}">Learn More</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>

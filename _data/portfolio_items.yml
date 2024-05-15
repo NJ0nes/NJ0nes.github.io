@@ -1,0 +1,31 @@
+- title: Physics Informed Neural Networks
+  image: pinns/burgersolution.jpg
+  detailpage: pinns.html
+  description: >
+    Neural networks trained to solve the 1D viscous Burgers' equation and experiments
+    on learning rate, network structure, activation functions, and incomplete initial
+    conditions. Implemented in MATLAB.
+
+- title: Index-linked Annuity Analysis
+  image: rilas/percentiles_indexperf_middle80.png
+  detailpage: rilas.html
+  description: >
+    Analysis of the distribution of returns for registered index-linked annuities
+    (RILAs) offered by Allianz. The returns are computed via a simulation of the
+    S&P 500 index modeled as GBM, with parameters estimated from historical data.
+    Implemented in R.
+
+- title: Topology Optimization
+  image: simp/bracket_33_04.png
+  detailpage: simp.html
+  description: >
+    An implementation of the Solid Isotropic Material with Penalization (SIMP) model
+    to maximize the rigidity of a load-bearing bracket mounted to a wall. Implemented
+    in FORTRAN 90.
+
+- title: 1D Layout Optimization
+  image: layoutopt/traversal_thin.png
+  detailpage: layoutopt.html
+  description: >
+    An original method for finding an optimal data layout in one dimension for a
+    given traversal pattern. Implemented in Python.

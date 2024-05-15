@@ -1,0 +1,17 @@
+nav {
+    padding-left: 3rem;
+    min-height: 5rem;
+    display: flex;
+    font-size: x-large;
+
+    a {
+        margin-right: 3rem;
+        color: #b29f9a;
+        text-decoration: none;
+    }
+
+    .active {
+        color: $text_color;
+        text-decoration: underline;
+    }
+}

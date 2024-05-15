@@ -1,0 +1,65 @@
+---
+layout: moredetails
+title: Index-linked Annuity Analysis
+image: rilas/percentiles_indexperf_middle80.png
+---
+
+<p>
+Registered index-linked annuities (RILAs) are a new type of investment vehicle that
+  provides exciting potential for growth with some protection from downside risk.
+The key difference between a RILA and a traditional fixed income annuity is that the
+  return of the RILA depends on the performance of its linked index.
+Allianz Life, a large and well-known financial institution, offers several RILA
+  products, each with different methods of determining the credited interest rate.
+The goal of this project was to model the returns of these products, define a probability
+  distribution for the returns, and finally to make a recommendation on which product
+  to pick for a six-year long crediting period.
+</p>
+
+<p>
+The RILAs in question are linked to the performance of the S&P 500 index.
+Thus, the first task was to simulate the return of the S&P 500 over the next
+  six years.
+To do this, I modeled the S&P 500 as geometric Brownian motion and ran
+  10,000 simulations of its returns.
+  
+To estimate the parameters <em>μ</em> and <em>σ</em>, I used their
+  maximum likelihood estimators obtained from the daily closing
+  price of the SPY exchange-traded fund from the start of 2003 to
+  the end of 2023.
+Once the parameters were obtained, I simulated the S&P 500 for
+  1512 days using a standard Euler-Maryuama method.
+</p>
+
+<div class="vertcenter">
+    <div class="sidebyside">
+        <figure>
+            <img src="/assets/images/rilas/percentiles_multiplebottom10.png"/>
+            <figcaption>Bottom 10% of simulated annuity returns for 1-year term
+                products.</figcaption>
+        </figure>
+        <figure>
+            <img src="/assets/images/rilas/percentiles_indexperf_bottom10.png"/>
+            <figcaption>Bottom 10% of simulated annuity returns for the
+            Index Performance series.</figcaption>
+        </figure>
+    </div>
+</div>
+
+<p>
+The recommendation was meant for a person nearing retirement, so downside risk
+  was a serious concern.
+This meant that it would be worth sacrificing the highest end of returns to gain
+  safety, so I focused on the bottom 10% of returns for the annuities in my
+  analysis.
+In particular, I measured the 0.1%, 1%, and 10% worst returns against the likelihood
+  of beating a fixed instrument that offers a 5.2% annual return (cumulative 35.5%)
+  over 6 years.
+By this metric, I recommended the Index Performance 1-Year Term with 20% buffer.
+</p>
+
+<br/>
+
+<p>
+Disclaimer: I am not a fiduciary, and this is not financial advice.
+</p>

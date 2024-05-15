@@ -1,0 +1,38 @@
+---
+layout: moredetails
+title: Topology Optimization
+image: simp/bracket_33_04.png
+---
+
+<p>
+In this project, I implemented the Solid Isotropic Material with Penalization (SIMP) model
+  for topology optimization in FORTRAN 90.
+The goal was to create the most rigid possible structure for a bracket mounted to
+  a wall on the left that bears a load on the bottom right.
+To do this, the compliance of the structure is computed in each iteration and
+  the amount of material in each grid cell changed so as to reduce the compliance
+  in the next iteration subject to a volume constraint.
+Additionally, I performed a sensitivity analysis of final compliance against changes
+  in the volume constraint and changes in the penalty term of SIMP.
+</p>
+
+<div class="vertcenter">
+    <div class="sidebyside">
+        <figure>
+            <img src="/assets/images/simp/penalty.png"
+                alt="Graph of compliance vs. SIMP penalty term. It is increasing."/>
+            <figcaption>Graph of compliance vs. SIMP penalty term.</figcaption>
+        </figure>
+        <figure>
+            <img src="/assets/images/simp/volume.png"
+                alt="Graph of compliance vs. volume constraint. It is decreasing."/>
+            <figcaption>Graph of compliance vs. volume constraint.</figcaption>
+        </figure>
+    </div>
+</div>
+
+<p>
+As part of the implementation of SIMP, the FORTRAN code also contains a basic implementation
+  of the simplex method, which is used to minimize compliance, and a basic implementation of
+  Cholesky decomposition, which is used during the computation of compliance.
+</p>

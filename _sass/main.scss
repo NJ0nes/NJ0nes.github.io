@@ -1,0 +1,109 @@
+@import "colorscheme.scss";
+@import "navbar.scss";
+
+$imageheight: 500px;
+$contentwidth: 60%;
+$centerdistance: 4%;
+
+body {
+    margin: 2em;
+    background: $bgcolor_even;
+    color: $text_color;
+}
+
+img {
+    display: block;
+    max-width: 90vw;
+    max-height: $imageheight;
+}
+
+div.large-container {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+.itembody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.isodd0 {
+    background: $bgcolor_even;
+    width: 100vw;
+}
+.isodd1 {
+    background: $bgcolor_odd;
+    width: 100vw;
+}
+
+div.preview {
+    padding: 16px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+div.description {
+    padding: 16px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    
+}
+
+@media screen and (min-width: 1100px) {
+    .itembody {
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    .isodd0 {
+        background: $bgcolor_even;
+        flex-direction: row;
+        width: 100vw;
+        
+        .preview {
+            padding: 32px;
+            justify-content: right;
+            flex: 1;
+        }
+
+        .description {
+            padding: 32px;
+            justify-content: left;
+            flex: 1;
+
+            div {
+                max-width: $contentwidth;
+            }
+        }
+    }
+    .isodd1 {
+        background: $bgcolor_odd;
+        flex-direction: row-reverse;
+        width: 100vw;
+
+        .preview {
+            padding: 32px;
+            justify-content: left;
+            flex: 1;
+        }
+
+        .description {
+            padding: 32px;
+            justify-content: right;
+            text-align: right;
+            flex: 1;
+            div {
+                max-width: $contentwidth;
+            }
+        }
+    }
+}

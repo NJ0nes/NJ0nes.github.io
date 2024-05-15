@@ -1,0 +1,61 @@
+---
+layout: moredetails
+title: Physics-Informed Neural Networks
+image: pinns/pinns_x01_t01_v02_error.gif
+---
+
+<p>
+In this project, I led a team to study the use of physics-informed neural networks
+  to solve an IBVP governed by the 1D viscous Burgers' equation.
+Starting from example code provided by MATLAB, we examined the effects of network
+  structure, activation functions, learning rate, batch size, and more on the
+  network output.
+</p>
+
+<div class="vertcenter">
+    <div class="sidebyside">
+        <figure>
+            <img style="max-height: 500px;" src="/assets/images/pinns/l2error_vs_netstructure_swish.png"/>
+            <figcaption>Error at the final time vs. number of layers and neurons
+                with the Swish activation function after 1,000 epochs. The activation
+                function for each layer had a learnable parameter affecting the shape
+                of Swish for that layer.</figcaption>
+        </figure>
+    </div>
+</div>
+
+<p>
+We also compared our results with those obtained from a standard explicit finite
+  difference method, and found that the neural network is unconditionally stable
+  whereas the standard finite difference method requires careful tuning to achieve
+  accurate results.
+However, the robustness of PINNs come at a large training cost, albeit one that
+  could be significantly reduced by training in parallel (GPU training was not
+  available for our experiments).
+</p>
+
+<div class="vertcenter">
+    <div class="sidebyside">
+        <figure>
+            <img src="/assets/images/pinns/pinns_scattered_half_v02.gif"/>
+            <figcaption>Evolution of the solution over time with incomplete
+            initial condition.</figcaption>
+        </figure>
+        <figure>
+            <img src="/assets/images/pinns/scattered.png"/>
+            <figcaption>Scattered measurements generated from the analytical
+            solution to the IBVP used to train the network.</figcaption>
+        </figure>
+    </div>
+</div>
+
+<p>
+Interestingly, it seems that PINNs can deliver a reasonable approximation to the
+  solution of the IBVP even with an incomplete initial condition, which suggests
+  PINNs as a useful technique for extrapolating from scattered data.
+</p>
+
+<p>
+I was awarded first prize for my oral presentation on this project at the WCU Research
+  and Creative Activity day on April 17th, 2024.
+</p>
