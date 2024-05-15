@@ -2,4 +2,5 @@
     {% for item in site.data.nav %}
     <a href="{{ item.link }}" class="{% if page.url == item.link %}active{% endif %}">{{ item.name }}</a>
     {% endfor %}
+    {% if page.layout == "moredetails" %}<a href="{{ page.repo }}">View Repo</a>{% endif %}
 </nav>
