@@ -29,3 +29,10 @@
   description: >
     An original method for finding an optimal data layout in one dimension for a
     given traversal pattern. Implemented in Python.
+
+- title: Sampling and Parameterizing Implicit Curves
+  image: interpolation/Circle_sample.png
+  detailpage: interpolation.html
+  description: >
+    An original algorithm to sample and parameterize simple closed implicit curves.
+    Implemented in MATLAB.

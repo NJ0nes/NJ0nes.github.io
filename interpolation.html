@@ -1,0 +1,68 @@
+---
+layout: moredetails
+title: Sampling and Parameterizing Implicit Curves
+image: interpolation/Circle_sample.png
+repo: https://github.com/NJ0nes/sample_parameterization
+---
+
+<p>
+In this project for MAT 325, I developed a method to sample and parameterize closed
+  implicit (level-set) curves.
+Often, there are simple and convenient implicit representations for shapes.
+Beyond simplicity, implicit representations are also useful for applications such
+  as constructive solid geometry.
+However, a parametric representation is convenient for other applications, such as
+  integrating along a boundary.
+The goal of this project was to enable simple conversion from implicit representations
+  to parametric representations.
+</p>
+
+<div class="vertcenter">
+    <div class="sidebyside">
+        <figure>
+            <img src="/assets/images/interpolation/Hexgram_sample.png"/>
+            <figcaption>Sample points on a hexgram, moving 0.01 units each step.</figcaption>
+        </figure>
+        <figure>
+            <img src="/assets/images/interpolation/Capsule_sample.png"/>
+            <figcaption>Sample points on a capsule, moving 0.01 units each step.</figcaption>
+        </figure>
+    </div>
+</div>
+
+<p>
+The method consists of two parts.
+First, the implicit curve must be sampled in such a way that the sample points lie sequentially
+  counter-clockwise around the curve.
+To do this, a point on the curve is first found by a variant of Newton's method.
+Then, the tangent line to the curve is found by using the fact that the gradient
+  is perpendicular to the level curve.
+A new point is created a short distance away along this line, then it is moved onto
+  the curve using Newton's method again.
+Then a tangent line is created at this new point and the process repeats.
+</p>
+
+<div class="vertcenter">
+    <div class="sidebyside">
+        <figure>
+            <img src="/assets/images/interpolation/Hexgram_interp.png"/>
+            <figcaption>Cubic spline interpolation of sample points on a hexgram.</figcaption>
+        </figure>
+        <figure>
+            <img src="/assets/images/interpolation/Capsule_interp.png"/>
+            <figcaption>Cubic spline interpolation of sample points on a capsule.</figcaption>
+        </figure>
+    </div>
+</div>
+
+<p>
+Second, the sampled points must be interpolated.
+As per the project requirements, I used parametric cubic splines and parametric
+  Lagrange interpolation, however the latter did not work very well.
+The poor performance of the Lagrange interpolation was to be expected, as a large
+  number of sample points must be interpolated.
+Cubic splines performed reasonably well, however they have difficulty with sharp corners
+  on the shapes.
+This could be remedied by using adaptive sampling in the first step, however I did
+  not have time to implement this.
+</p>
